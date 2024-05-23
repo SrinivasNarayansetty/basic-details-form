@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 import BasicDetails from "./Components/containers/BasicDetails";
 import BodyWeight from "./Components/containers/BodyWeight";
