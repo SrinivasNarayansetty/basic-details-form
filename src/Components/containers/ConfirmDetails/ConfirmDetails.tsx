@@ -44,7 +44,7 @@ const BodyWeight: React.FC = () => {
       }
      
     })
-  }, [navigate]);
+  }, [navigate, age, basicData,bodyWeight, basicData, message]);
 
   const getDataStatement = useCallback(
     (label: string, value?: string | number) => {
