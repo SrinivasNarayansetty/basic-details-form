@@ -1,5 +1,9 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 import { Typography, Card, Button } from "@mui/material";
 
@@ -16,7 +20,25 @@ const BodyWeight: React.FC = () => {
   }, [navigate]);
 
   const navigateToNextPage = useCallback(() => {
-    navigate("/success-screen");
+    const body = {
+      ...basicData,
+      weight: `${bodyWeight.kg} Kgs`,
+      age: `${age} years`,
+      message,
+    }
+
+    axios({
+      method: 'post',
+      url: 'https://jivi-assignment.free.beeceptor.com/submit/basic-details',
+      headers: {}, 
+      data: body
+    }).then((res) => {
+      if(res.data.success) {
+        navigate("/success-screen");
+      }
+      toast.error("Something went wrong");
+      return;
+    })
   }, [navigate]);
 
   const getDataStatement = useCallback(

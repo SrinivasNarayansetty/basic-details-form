@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 import BasicDetails from "./Components/containers/BasicDetails";
 import BodyWeight from "./Components/containers/BodyWeight";
@@ -11,6 +12,7 @@ import "./App.css";
 
 function App() {
   return (
+    <>
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -23,6 +25,17 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    <ToastContainer position="bottom-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored" />
+    </>
   );
 }
 
