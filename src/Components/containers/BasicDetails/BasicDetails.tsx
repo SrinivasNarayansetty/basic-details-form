@@ -30,7 +30,7 @@ const BasicDetails: React.FC = () => {
   const [basicDetails, setBasicdetails] = useState({
     heartRate: 60,
     higherBp: 125,
-    lowerBp: 60,
+    lowerBp: 62,
     name: "",
     dob: undefined,
     gender: undefined,
