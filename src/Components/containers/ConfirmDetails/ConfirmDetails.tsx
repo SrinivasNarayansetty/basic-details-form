@@ -34,10 +34,15 @@ const BodyWeight: React.FC = () => {
       data: body
     }).then((res) => {
       if(res.data.success) {
-        navigate("/success-screen");
+        toast.success("Submitted successfully", { onClose: () => {
+           navigate("/success-screen");
+           return;
+        }});
+      } else {
+        toast.error("Something went wrong");
+        return;
       }
-      toast.error("Something went wrong");
-      return;
+     
     })
   }, [navigate]);
 
